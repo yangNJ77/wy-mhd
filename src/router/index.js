@@ -1,27 +1,56 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+import Home from '../views/Home'
+import Bookrack from '../views/Home/Bookrack'
+import Find from '../views/Home/Find'
+import Gengxing from '../views/Home/Gengxing'
+import My from '../views/Home/My'
+import App from '../views/App'
+import Details from '../views/Details'
+import Login from '../views/Login'
+import Ranking from '../views/Ranking'
+import Rigeng from '../views/Rigeng'
+import Sort from '../views/Sort'
+import Xinzuo from '../views/Xinzuo'
+import Search from '../views/Search'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
 const router = new VueRouter({
-  routes
+  routes: [
+    {
+      path: '/home',
+      component: Home,
+      children: [
+        {
+          path: 'bookrack',
+          component: Bookrack
+        },
+        {
+          path: 'find',
+          component: Find
+        },
+        {
+          path: 'gengxing',
+          component: Gengxing
+        },
+        {
+          path: 'my',
+          component: My
+        }
+      ]
+    },
+    { path: '/login', component: Login },
+    { path: '/ranking', component: Ranking },
+    { path: '/rigeng', component: Rigeng },
+    { path: '/search', component: Search },
+    { path: '/sort', component: Sort },
+    { path: '/xinzuo', component: Xinzuo },
+    { path: '/app', component: App },
+    { path: '/details', component: Details },
+    { path: '/', redirect: '/home' }
+  ]
 })
 
 export default router
