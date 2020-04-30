@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../views/Home'
+import HomeItem from '../views/Home/HomeItme'
 import Bookrack from '../views/Home/Bookrack'
 import Find from '../views/Home/Find'
 import Gengxing from '../views/Home/Gengxing'
@@ -23,6 +24,11 @@ const router = new VueRouter({
       path: '/home',
       component: Home,
       children: [
+        {
+          path: 'homeitem',
+          component: HomeItem
+
+        },
         {
           path: 'bookrack',
           component: Bookrack
@@ -49,7 +55,7 @@ const router = new VueRouter({
     { path: '/xinzuo', component: Xinzuo },
     { path: '/app', component: App },
     { path: '/details', component: Details },
-    { path: '/', redirect: '/home' }
+    { path: '/', redirect: 'home/homeitem' }
   ]
 })
 

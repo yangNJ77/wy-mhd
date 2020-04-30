@@ -1,6 +1,7 @@
 <template>
   <div class="page-home">
     <router-view />
+
     <footer class="view-footer">
       <div class="footer-nav">
         <ul class="nav-list">
@@ -20,7 +21,7 @@
               </figure>
             </a>
           </li>
-          <li class="item home active">
+          <li class="item home">
             <a href="#" title="首页" rel="nofollow">
               <figure class="figure">
                 <i class="icon-tuijian_ball"></i>
@@ -57,6 +58,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//引入公用的mixins: scss
+
+@import "@/assets/styles/mixins.scss";
+
 .page-home {
   display: flex;
   flex-direction: column;
@@ -68,7 +73,8 @@ export default {
     z-index: 50;
     width: 100%;
     height: 52px;
-    background: cornsilk;
+    @include border-top;
+    // background: cornsilk;
     .nav-list{
       display: flex;
       flex-direction:row;
@@ -77,6 +83,50 @@ export default {
         height: 100%;
         width: 19%;
         text-align: center;
+        .icon-gengxin{
+          width: 32px;
+          height: 32px;
+          display: inline-block;
+          background-image: url(../../../public/icon/faxian.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        .icon-manhuaquan{
+          width: 32px;
+          height: 32px;
+          display: inline-block;
+          background-image: url(../../../public/icon/gengxin.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        .icon-shujia{
+          width: 32px;
+          height: 32px;
+          display: inline-block;
+          background-image: url(../../../public/icon/shujia.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        .icon-tuijian_ball{
+          width: 32px;
+          height: 32px;
+          display: inline-block;
+          background-image: url(../../../public/icon/shouye.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        .icon-myself{
+          width: 32px;
+          height: 32px;
+          display: inline-block;
+          background-image: url(../../../public/icon/wode.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+        .text{
+            font-size: 12px;
+            color: #999;
+          }
       }
     }
   }
