@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'Gengxin'
+  name: 'Gengxing'
 }
 </script>

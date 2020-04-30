@@ -1,7 +1,7 @@
 <template>
   <div class="page-home">
     <router-view />
-
+    <!-- 底部导航 begin -->
     <footer class="view-footer">
       <div class="footer-nav">
         <ul class="nav-list">
@@ -48,6 +48,7 @@
         </ul>
       </div>
     </footer>
+    <!-- 底部导航 end -->
   </div>
 </template>
 
