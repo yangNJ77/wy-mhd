@@ -1,26 +1,33 @@
 <template>
   <div class="vive-bady">
+    <!-- 搜素小图标 -->
     <div class="btn-search">
       <i class="ift-search"></i>
     </div>
+    <!-- 轮播图 -->
     <Swiper class="my-swiper" :autoplay='5000' v-if="bannerList.length > 0">
       <SwiperItem v-for="item in bannerList" :key="item.id">
         <img :src="item.imageurl" alt />
       </SwiperItem>
     </Swiper>
+
+    <!-- 菜单 -->
+    <IndexMenu></IndexMenu>
   </div>
 </template>
 
 <script>
 import { Swiper, SwiperItem } from '@/components/Swiper'
 import { getBanner } from '@/api/cartoon'
+import IndexMenu from './components/IndexMenu'
 
 export default {
   name: 'HomeItem',
 
   components: {
     Swiper,
-    SwiperItem
+    SwiperItem,
+    IndexMenu
   },
 
   data () {
