@@ -3,18 +3,9 @@
     <div class="btn-search">
       <i class="ift-search"></i>
     </div>
-    <Swiper class="my-swiper" :autoplay='5000'>
-      <SwiperItem>
-        <img src="https://cms.samanlehua.com/cms/chendan/7d5c4780-7acf-11ea-b8e1-216d908441cf.jpg-noresize.webp" alt="我就是牛逼"/>
-      </SwiperItem>
-      <SwiperItem>
-        <img src="https://cms.samanlehua.com/cms/chendan/886f51b0-8ab2-11ea-8ae7-f7ba84e6ad0b.jpg-noresize.webp" alt="我就是牛逼"/>
-      </SwiperItem>
-      <SwiperItem>
-        <img src="https://cms.samanlehua.com/cms/chendan/cceca060-7acf-11ea-bb66-cd095c201b78.jpg-noresize.webp" alt="我就是牛逼"/>
-      </SwiperItem>
-      <SwiperItem>
-        <img src="https://cms.samanlehua.com/cms/chendan/4d7582a0-8ab2-11ea-b4e2-adcff6c478aa.jpg-noresize.webp" alt="我就是牛逼"/>
+    <Swiper class="my-swiper" :autoplay='5000' v-if="bannerList.length > 0">
+      <SwiperItem v-for="item in bannerList" :key="item.id">
+        <img :src="item.imageurl" alt />
       </SwiperItem>
     </Swiper>
   </div>
@@ -22,6 +13,7 @@
 
 <script>
 import { Swiper, SwiperItem } from '@/components/Swiper'
+import { getBanner } from '@/api/cartoon'
 
 export default {
   name: 'HomeItem',
@@ -29,6 +21,29 @@ export default {
   components: {
     Swiper,
     SwiperItem
+  },
+
+  data () {
+    // 数据考虑 -》data？ props？ computed？ state？ getter？
+    // 数据的格式 -》string? obj? number? array?
+    return {
+      bannerList: []
+    }
+  },
+
+  created () {
+    getBanner().then(res => {
+      if (res.code === 200) {
+        this.bannerList = res.info
+      } else {
+        // 不OK 就报错
+        // TODO 目前先使用 alert 后面可以去用 vant 组件中 组件
+        alert(res.code_msg)
+      }
+    }).catch(err => {
+      console.log(err)
+      alert('网络异常 请稍后重试')
+    })
   }
 }
 </script>

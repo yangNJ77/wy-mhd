@@ -62,7 +62,7 @@ export default {
 <style lang='scss'>
 .swiper-container{
   width: 100%;
-  height: 250px;
+  height: 200px;
 }
 .swiper-pagination-bullet-active{
   background-color: red;
