@@ -11,6 +11,7 @@
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
+      <div class="btn-search"><i class="ift-search"></i></div>
     </div>
   </div>
 </template>
