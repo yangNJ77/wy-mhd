@@ -13,6 +13,9 @@
 
     <!-- 菜单 -->
     <IndexMenu></IndexMenu>
+
+    <!-- 热门 列表-->
+    <IndexContent></IndexContent>
   </div>
 </template>
 
@@ -20,6 +23,7 @@
 import { Swiper, SwiperItem } from '@/components/Swiper'
 import { getBanner } from '@/api/cartoon'
 import IndexMenu from './components/IndexMenu'
+import IndexContent from './components/IndexContent'
 
 export default {
   name: 'HomeItem',
@@ -27,7 +31,8 @@ export default {
   components: {
     Swiper,
     SwiperItem,
-    IndexMenu
+    IndexMenu,
+    IndexContent
   },
 
   data () {

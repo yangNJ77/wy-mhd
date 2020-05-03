@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .menu{
-  height: 100%;
+  margin-bottom: 20px;
   .menu-warp{
     display: flex;
     flex-direction: row;
