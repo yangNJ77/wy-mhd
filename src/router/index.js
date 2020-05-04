@@ -27,7 +27,6 @@ const router = new VueRouter({
         {
           path: 'homeitem',
           component: HomeItem
-
         },
         {
           path: 'bookrack',
@@ -44,8 +43,8 @@ const router = new VueRouter({
         {
           path: 'my',
           component: My
-        }
-        // { path: '/', redirect: 'homeitem' }
+        },
+        { path: '', redirect: '/home/homeitem' }
       ]
     },
     { path: '/login', component: Login },
@@ -56,7 +55,7 @@ const router = new VueRouter({
     { path: '/xinzuo', component: Xinzuo },
     { path: '/app', component: App },
     { path: '/details', component: Details },
-    { path: '/', redirect: 'home/homeitem' }
+    { path: '/', redirect: '/home' }
   ]
 })
 

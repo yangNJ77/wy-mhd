@@ -6,44 +6,44 @@
       <div class="footer-nav">
         <ul class="nav-list">
           <li class="item">
-            <a href="#" title="发现">
+            <router-link to="/home/find">
               <figure class="figure">
                 <i class="icon-manhuaquan"></i>
                 <figcaption class="text">发现</figcaption>
               </figure>
-            </a>
+            </router-link>
           </li>
           <li class="item">
-            <a href="#" title="更新">
+            <router-link to="/home/gengxing">
               <figure class="figure">
                 <i class="icon-gengxin"></i>
                 <figcaption class="text">更新</figcaption>
               </figure>
-            </a>
+            </router-link>
           </li>
           <li class="item home">
-            <a href="#" title="首页" rel="nofollow">
+            <router-link to="/">
               <figure class="figure">
                 <i class="icon-tuijian_ball"></i>
                 <figcaption class="text">首页</figcaption>
               </figure>
-            </a>
+            </router-link>
           </li>
           <li class="item">
-            <a href="#" title="书架" rel="nofollow">
+            <router-link to="/home/bookrack">
               <figure class="figure">
                 <i class="icon-shujia"></i>
                 <figcaption class="text">书架</figcaption>
               </figure>
-            </a>
+            </router-link>
           </li>
           <li class="item">
-            <a href="#" title="我的" rel="nofollow">
+            <router-link to="/home/my">
               <figure class="figure">
                 <i class="icon-myself"></i>
                 <figcaption class="text">我的</figcaption>
               </figure>
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
